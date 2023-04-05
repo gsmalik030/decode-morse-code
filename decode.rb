@@ -40,5 +40,15 @@ end
   return result.join()
 end
 
+def decode(message)
+  words = message.split('   ')
+  decoded_message = words.map do |word|
+    decode_word(word)
+  end
+  decoded_message.join(' ')
+end
+
 puts decode_char("-.--")
 puts decode_word("-- -.--")
+puts decode("-- -.--   -. .- -- .")
+puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
